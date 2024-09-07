@@ -1,0 +1,243 @@
+
+/* .form-container{
+    display: none;
+} */
+.loading-container{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-color: var(--light);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition:load 1s ease; */
+    animation:loader .5s 5s ease-in forwards;
+    opacity: 1;
+    overflow:hidden;
+    visibility:visible;
+}
+
+@keyframes loader{
+    from{
+        /* display: flex; */
+        opacity: 1;
+        z-index: 10;
+        display: flex;        
+        visibility:visible;
+    }
+
+    to{
+        /* display: none; */
+        opacity: 0;
+        z-index: 0;
+        display: none;        
+        visibility:hidden;
+    }
+}
+
+.circle{
+    position: absolute;
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    /* opacity: .7; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.neumorphic-circle{
+    background-color: var(--light);
+    border: none;
+    border-radius: 50%;
+    box-shadow: -10px -10px 25px var(--lightest),
+    -5px -5px 15px var(--lightest),
+    10px 10px 25px #19356650;
+}
+
+#c1 {
+    top: 20%;
+    left: -5%;
+    transform: translate(-50%, -50%);
+    width: 25vw;
+    height: 25vw;
+    min-height: 200px;
+    min-width: 200px;
+
+    animation: c1-anim 2.2s 1s ease infinite alternate;
+}
+#c2 {
+    left: 20%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    width: 10vw;
+    height: 10vw;
+    min-height: 80px;
+    min-width: 80px;
+
+    animation: c2-anim 2.2s 1s ease infinite alternate;
+}
+#c3 {
+    top: 0%;
+    left: 100%;
+    transform:translate(-50%,-50%);
+    width:30vw;
+    height:30vw;
+    min-height:300px;
+    min-width:300px;
+
+    animation: c3-anim 2.2s 1s ease infinite alternate;
+}
+#c4 {
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height: 40vw;
+    min-height: 500px;
+    min-width: 500px;
+
+    animation: c4-anim 2.2s 1s ease infinite alternate;
+}
+#c5 {
+    top: 65%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 10vw;
+    height: 10vw;
+    min-height: 10px;
+    min-width: 10px;
+    transform: scale(.5);
+
+    animation: c5-anim 2.2s 1s ease infinite alternate;
+}
+
+#c6 {
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    max-width: 5vw;
+    max-height: 5vw;
+    min-height: 100px;
+    min-width: 100px;
+
+    animation: c6-anim 2.2s 1s ease infinite alternate;
+}
+
+.loading-container .logo-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width:200px;
+    height:200px;
+    transform: translate(0,-20%);
+}
+
+.loading-container .logo-container .logo{
+    width:110px;
+    height:110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-container .logo-container .logo svg{
+    width:60px;
+    height:60px;
+transform:rotate(0);
+
+    animation: logo-anim 2.2s 1s ease-in-out infinite alternate;
+}
+
+.loading-container .logo-container #logo-text{
+    font-size: var(--text-largest);
+    color:var(--text-darkest);
+    font-family: var(--source-sans);
+    font-weight: var(--Thin);
+    letter-spacing:2px;
+}
+
+@keyframes c1-anim{
+    from{
+        top: 20%;
+        left: -5%;
+    }
+
+    to {
+        top: 25%;
+        left: 5%;
+    }
+
+    
+}
+
+@keyframes c2-anim {
+    from{
+       top: 70%;
+       left: 20%;
+    }
+
+    to {
+        top: 50%;
+        left: 30%;
+    }
+}
+
+@keyframes c3-anim {
+    from {
+        top: 0%;
+        left: 100%;
+    }
+
+    to {
+        top: 10%;
+        left: 90%;
+    }
+}
+
+@keyframes c4-anim {
+    from {
+        top: 110%;
+        left: 50%;
+    }
+
+    to {
+        top: 105%;
+        left: 50%;
+    }
+}
+
+@keyframes c5-anim {
+    from {
+        top: 65%;
+        left: 70%;
+    }
+
+    to {
+        top: 50%;
+        left: 60%;
+    }
+}
+
+@keyframes c6-anim {
+    from {
+        top: 50%;
+        left: 100%;
+    }
+
+    to {
+        top: 45%;
+        left: 80%;
+    }
+}
+
+@keyframes logo-anim{
+    from {
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+

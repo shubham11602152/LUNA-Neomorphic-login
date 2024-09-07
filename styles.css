@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Open+Sans:wght@300;400;600;700;800&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+@font-face {
+  font-family: "Product Sans Black";
+  src: url("Fonts/Product\ Sans\ Black.ttf");
+}
+:root {
+  --lightest: #ffffff;
+  --light: #ecf0f3;
+  --medium: #d1d9e6;
+  --dark: #97a7c3;
+  --darkest: #193566;
+
+  --text-darkest: #193566;
+  --text-dark: #586e90;
+  --text-light: #a9b6c9;
+
+  --text-largest: 40px;
+  --text-large: 25px;
+  --text-medium: 18px;
+  --text-small: 16px;
+  --text-smallest: 14px;
+  --noto-sans-JP: "Noto Sans JP", sans-serif;
+  --open-sans: "Open Sans", sans-serif;
+  --roboto: "Roboto", sans-serif;
+  --source-sans: "Source Sans Pro", sans-serif;
+  --product-sans-black: "Product Sans Black";
+
+  --boldest: 900;
+  --bold: 700;
+  --medium: 500;
+  --regular: 400;
+  --Light: 300;
+  --Thin: 100;
+
+  --shadow-light-up: -15px -15px 25px var(--lightest),
+    -10px -10px 15px var(--lightest);
+  --shadow-dark-up: 15px 15px 25px #19356650;
+
+  --shadow-light-pressed: -5px -5px 15px var(--lightest);
+  --shadow-dark-pressed: 5px 5px 15px #19356650;
+
+  --shadow-light-down: -5px -5px 10px var(--lightest);
+  --shadow-dark-down: 5px 5px 10px #19356650;
+
+  font-family: var(--source-sans);
+}
+
+/* .text-innerShadow {
+    background-color: var(--darkest);
+    color: transparent;
+    background-clip: text;
+    text-shadow: 0px 2px 3px #ffffff4f,
+        -1px 0px 3px #0000003f;
+} */
+
+.text-outerShadow {
+  text-shadow: -2px -2px 4px var(--lightest), 2px 2px 4px var(--dark),
+    -3px -3px 5px var(--lightest), 3px 3px 5px var(--dark);
+}
+
+.button-text-innerShadow {
+  color: transparent;
+  background-color: var(--darkest);
+  background-clip: text;
+  text-shadow: 1px 1px 1px #ffffff3a, -1px -1px 1px var(--darkest);
+}
+
+.neumorphic-up {
+  background-color: var(--light);
+  border: none;
+  box-shadow: var(--shadow-dark-up), var(--shadow-light-up);
+}
+
+.neumorphic-down {
+  background-color: var(--light);
+  border: none;
+  box-shadow: inset var(--shadow-dark-down), inset var(--shadow-light-down);
+}
+
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--light);
+  /* padding:0 20px; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo-container {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+}
+
+#logo-text {
+  color: var(--darkest);
+  font-weight: var(--Thin);
+  text-shadow: -1px -1px 2px var(--lightest), 1px 1px 2px var(--dark),
+    -2px -2px 4px var(--lightest), 2px 2px 4px var(--dark);
+}
+
+.tree-container {
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.tree-container #tree {
+  width: 150%;
+  height: 100%;
+  transform: translateX(0%);
+  transition: all 1s ease;
+  animation: slide 15s 5s ease-in-out infinite alternate;
+}
+
+*:focus-visible {
+  outline-color: var(--darkest);
+  outline-offset: 2px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.form-inner {
+  display: flex;
+  width: 100%;
+  max-width: 350px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  font-size: var(--text-largest);
+  color: var(--text-darkest);
+  font-family: var(--product-sans-black);
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: var(--text-medium);
+  color: var(--text-dark);
+  font-weight: var(--regular);
+  word-spacing: 2px;
+}
+
+input {
+  width: 100%;
+  min-height: 50px;
+  /* max-width:300px; */
+  border-radius: 50px;
+  padding: 5px 20px;
+  /* color: var(--text-darkest); */
+  color: transparent;
+  letter-spacing: 2px;
+  font-size: var(--text-small);
+  font-weight: var(--regular);
+  text-shadow: -1px -1px 1px var(--lightest), 1px 1px 1px var(--dark),
+    -1px -1px 3px var(--lightest), 1px 1px 3px var(--dark);
+}
+
+.text-anim {
+  transform: translateX(20%);
+  opacity: 0;
+  animation: input-anim 1s 6s ease forwards;
+}
+
+.email {
+  transform: translateX(20%);
+  opacity: 0;
+  animation: input-anim 1s 6.5s ease forwards;
+}
+
+.password {
+  transform: translateX(20%);
+  opacity: 0;
+  animation: input-anim 1s 7s ease forwards;
+}
+
+@keyframes input-anim {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+input:hover {
+  color: var(--text-darkest);
+}
+
+input::placeholder {
+  color: var(--text-light);
+  font-size: var(--text-small);
+  font-weight: var(--regular);
+  text-shadow: none;
+  letter-spacing: 1px;
+}
+
+a {
+  color: var(--text-darkest);
+  font-size: var(--text-smallest);
+  font-weight: var(--regular);
+  word-spacing: 2px;
+}
+
+button {
+  width: 150px;
+  min-height: 60px;
+  margin-top: 10px;
+  border-radius: 60px;
+  font-size: var(--text-large);
+  font-weight: var(--bold);
+  font-family: var(--product-sans-black);
+  align-self: center;
+  cursor: pointer;
+  transition: 0.2s;
+
+  color: var(--text-darkest);
+  text-shadow: -1px -1px 2px var(--lightest), 1px 1px 2px var(--dark),
+    -2px -2px 5px var(--lightest), 2px 2px 5px var(--dark);
+  /* transition-timing-function: cubic-bezier(0.44, -0.28, 0.38, 1.37); */
+
+  transition-timing-function: cubic-bezier(0.29, -0.43, 0.33, 1.49);
+}
+
+button:active {
+  transform: scale(0.8, 0.9);
+  box-shadow: var(--shadow-dark-pressed), var(--shadow-light-pressed);
+}
+
+@media screen and (max-width: 480px) {
+  .tree-container {
+    max-width: 100%;
+  }
+
+  .form-inner {
+    max-width: 330px;
+  }
+}
